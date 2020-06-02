@@ -1,8 +1,14 @@
 {
   "name": "backend-project-lvl1",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "brain games project",
   "main": "bin/brain-games.js",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
+  "engines": {
+    "node": ">=13"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +23,7 @@
   ],
   "author": "seth2810",
   "license": "MIT",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/seth2810/backend-project-lvl1/issues"
   },
