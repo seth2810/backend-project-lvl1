@@ -1,6 +1,6 @@
 {
   "name": "backend-project-lvl1",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "brain games project",
   "main": "bin/brain-games.js",
   "bin": {
@@ -30,5 +30,10 @@
   "homepage": "https://github.com/seth2810/backend-project-lvl1#readme",
   "dependencies": {
     "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "eslint": "^7.1.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
   }
 }

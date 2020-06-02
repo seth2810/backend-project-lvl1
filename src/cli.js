@@ -1,13 +1,13 @@
-import { default as readline } from "readline-sync";
+import readline from 'readline-sync';
 
 const greet = () => {
-  console.log("Welcome to the Brain Games!");
+  console.log('Welcome to the Brain Games!');
 
-  const name = readline.question("May I have your name? ");
+  const name = readline.question('May I have your name? ');
 
   console.log(`Hello, ${name}!`);
 };
 
-export const run = () => {
-  greet();
-};
+const run = () => greet();
+
+export default run;
