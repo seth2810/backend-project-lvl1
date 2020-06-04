@@ -5,4 +5,4 @@ This is another one example of brain games project from hexlet in backend JavaSc
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/seth2810/backend-project-lvl1/maintainability)
 [![Node CI](https://github.com/seth2810/backend-project-lvl1/workflows/Node.js%20CI/badge.svg)](https://github.com/seth2810/backend-project-lvl1/actions)
 
-[![asciicast](https://asciinema.org/a/QHcnX0D1SguP5z9c3jaxODlrk.svg)](https://asciinema.org/a/QHcnX0D1SguP5z9c3jaxODlrk)
+[![asciicast](https://asciinema.org/a/prNZFSBk5gwxue3TKju8xpSha.svg)](https://asciinema.org/a/prNZFSBk5gwxue3TKju8xpSha)

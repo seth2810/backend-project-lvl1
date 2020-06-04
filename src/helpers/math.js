@@ -17,3 +17,25 @@ export const progression = (start, diff, length) => {
   const sequence = Array.from({ length });
   return sequence.map((_, index) => start + (diff * index));
 };
+
+export const isPrime = (n) => {
+  if (n < 2) {
+    return false;
+  }
+
+  if (n === 2) {
+    return true;
+  }
+
+  if (n % 2 === 0) {
+    return false;
+  }
+
+  for (let i = 3; i <= Math.sqrt(n); i += 2) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+
+  return true;
+};
