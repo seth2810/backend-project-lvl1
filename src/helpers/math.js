@@ -12,3 +12,8 @@ export const gcd = (a, b) => {
 
   return gcd(b, a % b);
 };
+
+export const progression = (start, diff, length) => {
+  const sequence = Array.from({ length });
+  return sequence.map((_, index) => start + (diff * index));
+};
