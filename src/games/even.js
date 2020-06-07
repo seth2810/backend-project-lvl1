@@ -1,16 +1,15 @@
-import { print } from '../helpers/io.js';
-import { randomInteger, isEven } from '../helpers/math.js';
-import { createGame, createIterativeGame, createQuestionAnswerStep } from '../helpers/game.js';
+import { createGame } from '../helpers/game.js';
+import { randomInteger } from '../helpers/math.js';
 
-const rules = () => {
-  print('Answer "yes" if the number is even, otherwise answer "no".');
-};
+const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const step = () => {
+const isEven = (n) => n % 2 === 0;
+
+const generateRoundData = () => {
   const number = randomInteger();
   const answer = isEven(number) ? 'yes' : 'no';
 
   return [number, answer];
 };
 
-export default createGame(rules, createIterativeGame(createQuestionAnswerStep(step)));
+export default createGame(rules, generateRoundData);

@@ -1,12 +1,14 @@
-import { print } from '../helpers/io.js';
-import { randomInteger, progression } from '../helpers/math.js';
-import { createGame, createIterativeGame, createQuestionAnswerStep } from '../helpers/game.js';
+import { createGame } from '../helpers/game.js';
+import { randomInteger } from '../helpers/math.js';
 
-const rules = () => {
-  print('What number is missing in the progression?');
+const rules = 'What number is missing in the progression?';
+
+const progression = (start, diff, length) => {
+  const sequence = Array.from({ length });
+  return sequence.map((_, index) => start + (diff * index));
 };
 
-const step = () => {
+const generateRoundData = () => {
   const sequence = progression(randomInteger(), randomInteger(), 10);
   const index = randomInteger(1, sequence.length - 1);
   const [number] = sequence.splice(index, 1, '..');
@@ -16,4 +18,4 @@ const step = () => {
   return [question, answer];
 };
 
-export default createGame(rules, createIterativeGame(createQuestionAnswerStep(step)));
+export default createGame(rules, generateRoundData);

@@ -1,12 +1,17 @@
-import { print } from '../helpers/io.js';
-import { randomInteger, gcd } from '../helpers/math.js';
-import { createGame, createIterativeGame, createQuestionAnswerStep } from '../helpers/game.js';
+import { createGame } from '../helpers/game.js';
+import { randomInteger } from '../helpers/math.js';
 
-const rules = () => {
-  print('Find the greatest common divisor of given numbers.');
+const rules = 'Find the greatest common divisor of given numbers.';
+
+const gcd = (a, b) => {
+  if (b === 0) {
+    return a;
+  }
+
+  return gcd(b, a % b);
 };
 
-const step = () => {
+const generateRoundData = () => {
   const a = randomInteger();
   const b = randomInteger();
   const question = `${a} ${b}`;
@@ -15,4 +20,4 @@ const step = () => {
   return [question, answer];
 };
 
-export default createGame(rules, createIterativeGame(createQuestionAnswerStep(step)));
+export default createGame(rules, generateRoundData);

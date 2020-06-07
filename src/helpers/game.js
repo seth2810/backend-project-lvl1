@@ -1,45 +1,34 @@
-import * as io from './io.js';
-import { noop } from './function.js';
+import readline from 'readline-sync';
 
+const maxSteps = 3;
 
-export const createGame = (rules = noop, engine = noop) => () => {
-  io.welcome();
+export const createGame = (rules, generateRoundData) => () => {
+  console.log('Welcome to the Brain Games!');
 
-  const player = io.askName();
+  const player = readline.question('May I have your name? ');
 
-  io.greet(player);
+  console.log(`Hello, ${player}!`);
 
-  rules();
+  console.log(rules);
 
-  engine(player);
-};
+  for (let i = 0; i < maxSteps; i += 1) {
+    const [question, expected] = generateRoundData();
 
-export const createQuestionAnswerStep = (step) => () => {
-  const [question, expected] = step();
+    console.log(`Question: ${question}`);
 
-  io.printQuestion(question);
+    const answer = readline.question('Your answer: ');
+    const isCorrect = answer === expected;
 
-  const answer = io.askAnswer();
-  const isCorrect = answer === expected;
-
-  if (isCorrect) {
-    io.handleCorrect();
-  } else {
-    io.handleWrong(answer, expected);
-  }
-
-  return isCorrect;
-};
-
-export const createIterativeGame = (step, iterations = 3) => (player) => {
-  for (let i = 0; i < iterations; i += 1) {
-    const isStepCompleted = step();
-
-    if (!isStepCompleted) {
-      io.tryAgain(player);
+    if (isCorrect) {
+      console.log('Correct!');
+    } else {
+      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${expected}".`);
+      console.log(`Let's try again, ${player}!`);
       return;
     }
   }
 
-  io.congrats(player);
+  console.log(`Congratulations, ${player}!`);
 };
+
+export default { createGame };

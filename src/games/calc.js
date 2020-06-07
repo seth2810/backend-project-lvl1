@@ -1,29 +1,25 @@
-import pairs from '@hexlet/pairs';
-
-import { print } from '../helpers/io.js';
+import { createGame } from '../helpers/game.js';
 import { randomInteger } from '../helpers/math.js';
-import { createGame, createIterativeGame, createQuestionAnswerStep } from '../helpers/game.js';
 
-const rules = () => {
-  print('What is the result of the expression?');
+const rules = 'What is the result of the expression?';
+
+const operations = {
+  '+': (a, b) => a + b,
+  '-': (a, b) => a - b,
+  '*': (a, b) => a * b,
 };
 
-const operations = [
-  pairs.cons('+', (a, b) => a + b),
-  pairs.cons('-', (a, b) => a - b),
-  pairs.cons('*', (a, b) => a * b),
-];
+const signs = Object.keys(operations);
 
-const step = () => {
+const generateRoundData = () => {
   const a = randomInteger();
   const b = randomInteger();
-  const op = operations[randomInteger(0, operations.length - 1)];
-  const sign = pairs.car(op);
-  const fn = pairs.cdr(op);
+  const sign = signs[randomInteger(0, signs.length - 1)];
+  const operation = operations[sign];
   const question = `${a} ${sign} ${b}`;
-  const answer = `${fn(a, b)}`;
+  const answer = `${operation(a, b)}`;
 
   return [question, answer];
 };
 
-export default createGame(rules, createIterativeGame(createQuestionAnswerStep(step)));
+export default createGame(rules, generateRoundData);
