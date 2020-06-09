@@ -1,7 +1,7 @@
-import { createGame } from '../helpers/game.js';
+import { buildGame } from '../engine.js';
 import { randomInteger } from '../helpers/math.js';
 
-const rules = 'What is the result of the expression?';
+const rulesDescription = 'What is the result of the expression?';
 
 const operations = {
   '+': (a, b) => a + b,
@@ -17,9 +17,9 @@ const generateRoundData = () => {
   const sign = signs[randomInteger(0, signs.length - 1)];
   const operation = operations[sign];
   const question = `${a} ${sign} ${b}`;
-  const answer = `${operation(a, b)}`;
+  const answer = String(operation(a, b));
 
   return [question, answer];
 };
 
-export default createGame(rules, generateRoundData);
+export default buildGame(rulesDescription, generateRoundData);

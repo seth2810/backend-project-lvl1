@@ -1,7 +1,7 @@
-import { createGame } from '../helpers/game.js';
+import { buildGame } from '../engine.js';
 import { randomInteger } from '../helpers/math.js';
 
-const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const rulesDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (n) => {
   if (n < 2) {
@@ -32,4 +32,4 @@ const generateRoundData = () => {
   return [number, answer];
 };
 
-export default createGame(rules, generateRoundData);
+export default buildGame(rulesDescription, generateRoundData);
