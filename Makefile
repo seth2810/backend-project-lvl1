@@ -1,5 +1,5 @@
 install:
-	npm install
+	npm ci
 
 brain-even:
 	node bin/brain-even.js
