@@ -6,3 +6,4 @@ This is another one example of brain games project from hexlet in backend JavaSc
 [![Node CI](https://github.com/seth2810/backend-project-lvl1/workflows/Node.js%20CI/badge.svg)](https://github.com/seth2810/backend-project-lvl1/actions)
 
 [![asciicast](https://asciinema.org/a/prNZFSBk5gwxue3TKju8xpSha.svg)](https://asciinema.org/a/prNZFSBk5gwxue3TKju8xpSha)
+![Actions Status](#https://github.com/seth2810/backend-project-lvl1/workflows/hexlet-check/badge.svg)
