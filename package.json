@@ -3,6 +3,7 @@
   "version": "0.0.10",
   "description": "brain games project",
   "bin": {
+    "brain-games": "bin/brain-games.js",
     "brain-even": "bin/brain-even.js",
     "brain-calc": "bin/brain-calc.js",
     "brain-gcd": "bin/brain-gcd.js",
